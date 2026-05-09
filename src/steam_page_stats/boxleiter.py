@@ -21,7 +21,6 @@ holdout, see https://steamforecast.app
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 # Modern Boxleiter multiplier brackets — sales-per-review.
 # - Low: 30 (skewed toward shorter, more-completed indie titles)

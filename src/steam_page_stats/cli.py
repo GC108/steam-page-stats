@@ -11,7 +11,6 @@ import argparse
 import asyncio
 import json
 import sys
-from typing import Optional
 
 from steam_page_stats.boxleiter import boxleiter_estimate
 from steam_page_stats.client import fetch_page_stats
