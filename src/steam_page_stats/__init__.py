@@ -13,7 +13,7 @@ from steam_page_stats.client import (
     fetch_page_stats,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = [
     "BoxleiterResult",
     "PageStats",

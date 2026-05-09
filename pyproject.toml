@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "steam-page-stats"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fetch a Steam game's public page stats + apply the Boxleiter wishlist→revenue rule of thumb. The honest version: a heuristic with documented limits."
 readme = "README.md"
 license = "MIT"
