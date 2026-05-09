@@ -102,10 +102,9 @@ class SteamPageStatsClient:
 
     async def fetch(self, appid: int) -> PageStats:
         """Fetch combined Storefront + reviews data for a single appid."""
-        store_resp = await self._get_json(
-            STORE_URL,
-            {"appids": appid, "filters": "basic,price_overview,release_date,genres"},
-        )
+        # No `filters=` param: Steam excludes developers/publishers under the
+        # `basic` filter, and the full payload is still only ~5-10KB.
+        store_resp = await self._get_json(STORE_URL, {"appids": appid})
         reviews_resp = await self._get_json(
             REVIEWS_URL.format(appid=appid),
             {"json": 1, "language": "all", "purchase_type": "all", "num_per_page": 0},
