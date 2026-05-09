@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "steam-page-stats"
+version = "0.1.0"
+description = "Fetch a Steam game's public page stats + apply the Boxleiter wishlist→revenue rule of thumb. The honest version: a heuristic with documented limits."
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Steam Launch Forecaster", email = "greg@steamforecast.app"}]
+keywords = ["steam", "indie", "gamedev", "boxleiter", "revenue", "analytics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",  # httpx mocking
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://steamforecast.app"
+Documentation = "https://steamforecast.app/methodology"
+Repository = "https://github.com/GC108/steam-page-stats"
+
+[project.scripts]
+steam-page-stats = "steam_page_stats.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/steam_page_stats"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
