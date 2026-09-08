@@ -88,8 +88,9 @@ async def _async_main(args) -> int:
     print(f"  high (×{est.multiplier_high}):    {_format_revenue(est.revenue_high_cents)}")
     print()
     print("  ⚠  This is a heuristic with ~24% of games off by >30% per the formula's")
-    print("     own author. For an empirically-validated P10–P90 cone with calibrated")
-    print("     80% coverage per genre, see https://steamforecast.app")
+    print("     own author. For a calibrated P10–P90 launch cone (~82% nominal coverage,")
+    print("     81–86% realized per wishlist tier on 6,422 held-out launches), see")
+    print("     https://steamforecast.app")
     return 0
 
 
