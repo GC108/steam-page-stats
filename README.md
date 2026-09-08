@@ -5,8 +5,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Fetch a Steam game's public page stats and apply the **Boxleiter rule of
-thumb** to estimate lifetime revenue from the review count. The honest
-version of a useful heuristic.
+thumb** to estimate lifetime revenue from the review count. A plain
+version of a useful heuristic, with its uncertainty shown.
 
 ```bash
 pip install steam-page-stats
@@ -29,8 +29,9 @@ Boxleiter rule-of-thumb revenue estimate:
   high (×63):    $322.6M
 
   ⚠  This is a heuristic with ~24% of games off by >30% per the formula's
-     own author. For an empirically-validated P10–P90 cone with calibrated
-     80% coverage per genre, see https://steamforecast.app
+     own author. For a calibrated P10–P90 launch cone (~82% nominal coverage,
+     81–86% realized per wishlist tier on 6,422 held-out launches), see
+     https://steamforecast.app
 ```
 
 ## Why this exists
@@ -51,14 +52,15 @@ This package gives you:
 - A **CLI** for quick one-off lookups
 
 The package is deliberately small. It does *not* try to be a calibrated
-forecaster — for that, you need per-genre stratification, conformal
+forecaster — for that, you need wishlist-tier stratification, conformal
 prediction intervals, and a labelled corpus to validate against. That's a
 hard problem; the rule of thumb is not.
 
-If you need calibrated revenue ranges with empirically-validated 80%
-coverage on a held-out launch corpus, plus causal estimates for marketing
-levers, see the full forecaster at **<https://steamforecast.app>** —
-methodology and per-genre coverage stats are open at
+If you need calibrated revenue ranges validated on a held-out launch corpus
+(~82% nominal coverage, 81–86% realized per wishlist tier, n=6,422), plus
+causal estimates for marketing levers, see the full forecaster at
+**[SteamForecast](https://steamforecast.app)** — methodology and per-tier
+coverage stats are open at
 [/methodology](https://steamforecast.app/methodology).
 
 ## Install
@@ -151,9 +153,9 @@ The Boxleiter heuristic is structurally biased on:
   [steamforecast.app/methodology](https://steamforecast.app/methodology)
   for the variance data).
 
-For these cases, a calibrated cone with empirically-validated coverage
-ranges beats a single-number heuristic. The rule of thumb is a useful
-sanity check, not a budget-decision tool.
+For these cases, a calibrated cone with validated coverage beats a
+single-number heuristic. The rule of thumb is a useful sanity check, not a
+budget-decision tool.
 
 ## Development
 
@@ -171,10 +173,10 @@ MIT — see [LICENSE](LICENSE).
 
 ## Related
 
-- **[steamforecast.app](https://steamforecast.app)** — calibrated revenue
-  cones with empirically-validated 80% coverage per genre, causal
-  marketing-lever estimates, and Total Lift Attribution to recover paid
-  campaign wishlists Steam's UTM dashboard misses.
+- **[SteamForecast](https://steamforecast.app)** — calibrated launch revenue
+  cones (~82% nominal coverage, 81–86% realized per wishlist tier on 6,422
+  held-out launches), causal marketing-lever estimates, and Total Lift
+  Attribution to recover paid campaign wishlists Steam's UTM dashboard misses.
 - **[Steam Web API documentation](https://partner.steamgames.com/doc/webapi)**
 - **Boxleiter method, Mike Boxleiter (2014, updated 2023)** — the original
   formulation and 2023 retrospective.
