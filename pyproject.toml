@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "steam-page-stats"
-version = "0.1.1"
+version = "0.1.2"
 description = "Fetch a Steam game's public page stats + apply the Boxleiter wishlist→revenue rule of thumb. The honest version: a heuristic with documented limits."
 readme = "README.md"
 license = "MIT"
-authors = [{name = "Steam Launch Forecaster", email = "greg@steamforecast.app"}]
+authors = [{name = "Steam Launch Forecaster", email = "hello@steamforecast.app"}]
 keywords = ["steam", "indie", "gamedev", "boxleiter", "revenue", "analytics"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -33,8 +33,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://steamforecast.app"
-Documentation = "https://steamforecast.app/methodology"
+Homepage = "https://steamforecast.app/?ref=steam-page-stats"
+Documentation = "https://steamforecast.app/methodology?ref=steam-page-stats"
 Repository = "https://github.com/GC108/steam-page-stats"
 
 [project.scripts]
